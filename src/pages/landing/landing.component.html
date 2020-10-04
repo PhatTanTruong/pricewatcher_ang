@@ -1,0 +1,25 @@
+<div class="landing-container">
+  <!-- Heading section -->
+  <section class="landing-section">
+    <div class="img-background h-100">
+      <div class="content-layer d-flex align-items-center justify-content-center h-100">
+        <input placeholder="Search your product" />
+        <button mat-raised-button color="primary">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branch section -->
+  <section class="landing-section">
+    <div class="img-background h-100">
+      <div class="content-layer d-flex flex-column align-items-center justify-content-around h-100">
+        <h2 class="title">The branchs we support</h2>
+        <div class="branch-list-wrapper">
+          <a *ngFor="let branch of supportedBranch" [href]="branch.link" class="branch"
+            ><img [src]="branch.image" alt="Image logo"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
