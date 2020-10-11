@@ -1,0 +1,55 @@
+$transition: all 0.2s ease-out;
+:host {
+  line-height: 1;
+  width: 100%;
+
+  .header-container {
+    padding: 20px;
+    background-color: rgba($color: #f5f5f5, $alpha: 0.95);
+
+    span.material-icons {
+      font-size: 40px;
+      transition: $transition;
+    }
+    .left {
+      .header-link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        min-height: 40px;
+        min-width: 100px;
+
+        span.link-value {
+          font-size: 13px;
+          height: 0;
+          opacity: 0;
+          transition: $transition;
+        }
+
+        &:hover {
+          span.material-icons {
+            font-size: 24px;
+          }
+
+          span.link-value {
+            font-size: 13px;
+            height: 16px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .right {
+      button {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &,
+    & * {
+      color: #0098ff;
+    }
+  }
+}

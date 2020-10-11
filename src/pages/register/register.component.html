@@ -1,0 +1,68 @@
+<div class="register-container d-flex justify-content-center align-items-center">
+  <div class="form-wrapper" [formGroup]="registerForm">
+    <div class="title text-center">Create One!</div>
+    <div class="input-row">
+      <div class="float-label-wrapper w-100 position-relative">
+        <span #forEmail class="float-label position-absolute" (click)="email.focus()">Email</span>
+        <span class="material-icons position-absolute">email</span>
+        <input
+          #email
+          formControlName="email"
+          class="w-100"
+          type="text"
+          placeholder="Your email"
+          (change)="updateLabel($event, forEmail)"
+        />
+        <span class="custom-error" *ngIf="registerForm.controls.email.dirty || registerForm.controls.email.touched">
+          {{ registerForm.controls.email.errors?.message }}
+        </span>
+      </div>
+    </div>
+
+    <div class="input-row">
+      <div class="float-label-wrapper w-100 position-relative">
+        <span #forPassword class="float-label position-absolute" (click)="password.focus()">Password</span>
+        <span class="material-icons position-absolute">lock</span>
+        <input
+          #password
+          formControlName="password"
+          class="w-100"
+          type="password"
+          placeholder=""
+          (change)="updateLabel($event, forPassword)"
+        />
+        <span
+          class="custom-error"
+          *ngIf="registerForm.controls.password.dirty || registerForm.controls.password.touched"
+        >
+          {{ registerForm.controls.password.errors?.message }}
+        </span>
+      </div>
+    </div>
+
+    <div class="input-row">
+      <div class="float-label-wrapper w-100 position-relative">
+        <span #forRePassword class="float-label position-absolute" (click)="repassword.focus()">Re-Password</span>
+        <span class="material-icons position-absolute">cached</span>
+        <input
+          #repassword
+          formControlName="rePassword"
+          class="w-100"
+          type="password"
+          placeholder=""
+          (change)="updateLabel($event, forRePassword)"
+        />
+        <span
+          class="custom-error"
+          *ngIf="registerForm.controls.rePassword.dirty || registerForm.controls.rePassword.touched"
+        >
+          {{ registerForm.controls.rePassword.errors?.message }}
+        </span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button class="action-button w-100" (click)="handleRegister()">Register</button>
+    </div>
+  </div>
+</div>

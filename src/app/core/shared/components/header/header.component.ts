@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SCREEN_PATH } from '../../app-constants/app.constants';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   routers = [
     {
-      link: '',
-      value: 'Home'
+      link: SCREEN_PATH.HOME,
+      value: 'Home',
+      icon: 'home'
     },
-    { link: 'product', value: 'Your product' }
+    {
+      link: SCREEN_PATH.PRODUCT,
+      value: 'Your product',
+      icon: 'favorite'
+    }
   ];
 
   constructor() {}

@@ -9,7 +9,8 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 *:focus,
-*:active {
+*:active,
+*:hover {
   outline: unset !important;
 }
 
@@ -32,4 +33,22 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media screen and (max-width: 1200px) {
+  .app-container {
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1500px) {
+  .app-container {
+    width: 1200px;
+  }
+}
+
+@media screen and (min-width: 1501px) {
+  .app-container {
+    width: 1500px;
+  }
 }

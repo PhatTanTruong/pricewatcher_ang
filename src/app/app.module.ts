@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from 'src/pages/main/main.component';
-import { SharedComponent } from 'src/core/shared/components';
-import { HeaderComponent } from 'src/core/shared/components/header/header.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { SharedComponent } from './core/shared/components';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [MainComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  declarations: [MainComponent, ...SharedComponent],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatIconModule, MatButtonModule],
   providers: [],
   bootstrap: [MainComponent]
 })

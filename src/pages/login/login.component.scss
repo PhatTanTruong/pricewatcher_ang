@@ -1,0 +1,102 @@
+$transition: all 0.2s ease-out;
+$transform-label: scale(0.9) translateY(1px);
+
+:host {
+  .login-container {
+    height: 100vh;
+    background: url('../../assets/images/blue-background.jpg') no-repeat center/cover;
+
+    .form-wrapper {
+      animation: showForm 0.5s ease-out forwards;
+      background-color: rgba($color: #8690da, $alpha: 0.5);
+      padding: 2rem;
+      border-radius: 10px;
+      width: 400px;
+
+      .title {
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 36px;
+      }
+
+      .input-row {
+        .float-label-wrapper {
+          span.float-label {
+            color: #757575;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            transition: $transition;
+
+            &.input-dirty {
+              top: 0;
+              left: 5px;
+              color: white;
+              transform: $transform-label;
+            }
+          }
+
+          input {
+            padding: 8px 10px 8px 30px;
+            margin: 20px 0;
+
+            font-size: 16px;
+            border-radius: 5px;
+            border-width: 0;
+
+            &::placeholder {
+              opacity: 0;
+              font-size: 16px;
+            }
+          }
+
+          span.material-icons {
+            font-size: 20px;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+          }
+
+          span.custom-error {
+            position: absolute;
+            left: 5px;
+            bottom: 0;
+            font-size: 16px;
+            color: red;
+          }
+
+          &:focus-within {
+            span.float-label {
+              top: 0;
+              left: 5px;
+              color: white;
+              transform: $transform-label;
+            }
+
+            input {
+              &::placeholder {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .actions {
+      margin-top: 20px;
+    }
+  }
+
+  @keyframes showForm {
+    0% {
+      margin-top: 100vh;
+      opacity: 0;
+    }
+    100% {
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+}

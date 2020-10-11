@@ -25,6 +25,7 @@
       &:nth-child(1) .img-background {
         background: url('../../assets/images/landing1.jpg') no-repeat center/cover;
         filter: brightness(1.1) opacity(0.85);
+        background-attachment: fixed;
       }
       &:nth-child(2) .img-background {
         background: url('../../assets/images/landing2.jpg') no-repeat center/cover;
